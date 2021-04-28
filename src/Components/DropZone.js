@@ -3,11 +3,12 @@ import Dropzone from 'react-dropzone';
 import { notification, Button } from 'antd';
 import 'antd/dist/antd.css';
 import styles from './Upload.module.css';
-
+import EmployeesTable from './Table';
 
 
 function DropZone() {
     const [file, setFile] = useState(null);
+    const [employees, setEmployees] = useState([]);
 
     const openNotification = (message) => {
         const key = `open${Date.now()}`;
@@ -66,6 +67,7 @@ function DropZone() {
                 }
             </div>
             <button className={file ? styles.discardButtonActive : styles.discardButton} disabled={!file ? true : false} onClick={clearFile}>Upload new file</button>
+            <EmployeesTable />
         </>
     )
 }

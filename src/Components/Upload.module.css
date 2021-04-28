@@ -1,5 +1,5 @@
 .dragContainer {
-    margin-top: 50px;
+    margin-top   : 50px;
     border       : 1px solid grey;
     border-radius: 15px;
     height       : 80px;
@@ -9,18 +9,15 @@
 }
 
 .dragActive {
-    background-color: rgb(127, 197, 127);
-    border          : 3px solid green;
-    height       : 80px;
-    width        : 30%;
-    margin       : auto;
-    margin-bottom: 50px;
-  
+    background-color: #3C9978;
+    height          : 80px;
+    width           : 30%;
+    margin          : auto;
+    margin-bottom   : 50px;
 }
 
 .dragContainer:hover {
-    background-color: rgb(127, 197, 127);
-    border          : 3px solid green;
+    background-color: #3C9978;
 }
 
 .headerDrag {
@@ -32,6 +29,7 @@
     height     : 80px;
     outline    : none;
     padding-top: 20px;
+    cursor     : pointer;
 }
 
 .fileInformation {
@@ -43,7 +41,7 @@
 }
 
 .discardButtonActive {
-    position: relative;
+    position        : relative;
     margin-right    : 5px;
     background-color: black;
     font-weight     : 400;
@@ -56,11 +54,13 @@
     border-width    : 1px;
     border-style    : solid;
     border-radius   : 2px;
-    width           : 100px;
+    padding         : 5px;
+    left            : 720px;
+    top             : -30px;
 }
 
 .discardButton {
-    position: relative;
+    position        : relative;
     background-color: transparent;
     font-weight     : 400;
     font-size       : 15px;
@@ -71,6 +71,7 @@
     border-width    : 1px;
     border-style    : solid;
     border-radius   : 2px;
-    left: 720px;
-    top: -30px;
+    padding         : 5px;
+    left            : 720px;
+    top             : -30px;
 }
