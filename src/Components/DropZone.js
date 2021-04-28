@@ -4,11 +4,12 @@ import { notification, Button } from 'antd';
 import 'antd/dist/antd.css';
 import styles from './Upload.module.css';
 import EmployeesTable from './Table';
+import {parse} from 'papaparse';
 
 
 function DropZone() {
     const [file, setFile] = useState(null);
-    const [employees, setEmployees] = useState([]);
+    const [employees, setEmployees] = useState([{ email: 'bobi', name: 'pesho' }]);
 
     const openNotification = (message) => {
         const key = `open${Date.now()}`;
@@ -26,9 +27,12 @@ function DropZone() {
     };
 
     const onDrop = useCallback(acceptedFiles => {
-        console.log(acceptedFiles[0])
         setFile(acceptedFiles[0]);
-
+        Array.from(acceptedFiles).forEach(async file => {
+            const TEXT = await file.text();
+            console.log(TEXT)
+            const RESULT = parse(TEXT)
+        })
     }, [])
 
     const clearFile = () => {
@@ -67,7 +71,7 @@ function DropZone() {
                 }
             </div>
             <button className={file ? styles.discardButtonActive : styles.discardButton} disabled={!file ? true : false} onClick={clearFile}>Upload new file</button>
-            <EmployeesTable />
+            <EmployeesTable employees={employees} />
         </>
     )
 }
