@@ -3,7 +3,7 @@ import DropZone from './Components/DropZone'
 
 function App() {
   return (
-    <div>
+    <div className='container'>
       <DropZone />
     </div>
   );

@@ -1,3 +1,6 @@
 body {
     background-color: whitesmoke;
 }
+.container {
+    padding-top: 30px;
+}
