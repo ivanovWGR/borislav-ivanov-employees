@@ -1,8 +1,10 @@
 import './App.css';
+import DropZone from './Components/DropZone'
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <DropZone />
     </div>
   );
 }

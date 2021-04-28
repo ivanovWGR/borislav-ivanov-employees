@@ -1,0 +1,31 @@
+.dragContainer {
+    border: 1px solid grey;
+    border-radius: 15px;
+    height: 80px;
+    width : 30%;
+    margin: auto;
+}
+
+.dragContainer:hover {
+    background-color: rgb(95, 173, 95);
+    border          : none;
+}
+
+.headerDrag {
+    font-weight: 400;
+    font-size  : 20px;
+    line-height: 24px;
+    text-align : center;
+    color      : rgb(51, 49, 49);
+    height: 60px;
+    outline: none;
+    padding-top: 20px;
+}
+
+.fileInformation {
+    list-style: none;
+    margin-top: 8px;
+    position  : relative;
+    left: 90px;
+    color: grey;
+}
