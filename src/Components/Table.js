@@ -4,11 +4,11 @@ import styles from './Table.module.css';
 function EmployeesTable({ employees, file }) {
     const renderEmployes = (file) => {
         return (
-            <tr key={file.EmpID} className={styles.activeRow}>
-                <td>{file.EmpID}</td>
+            <tr key={file.DaysWork} className={styles.activeRow}>
+                <td>{file.EmpID1}</td>
+                <td>{file.EmpID2}</td>
                 <td>{file.ProjectID}</td>
-                <td>{file.DateFrom}</td>
-                <td>{file.DateTo}</td>
+                <td>{file.DaysWork}</td>
             </tr>
         )
     }
@@ -24,13 +24,7 @@ function EmployeesTable({ employees, file }) {
                     </tr>
                 </thead>
                 {file ?
-                    <tbody>
-                        <tr className={styles.activeRow}>
-                            <td>Example1</td>
-                            <td>Example2</td>
-                            <td>Example3</td>
-                            <td>Example4</td>
-                        </tr>
+                    <tbody> 
                         {employees.map(renderEmployes)}
                     </tbody>
                     :

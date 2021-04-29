@@ -5,15 +5,11 @@ import 'antd/dist/antd.css';
 import styles from './Upload.module.css';
 import EmployeesTable from './Table';
 import { parse } from 'papaparse';
-import moment from 'moment'
+import { getEmplyeesPrintInfo } from './uttils';
 
 
 
 function DropZone() {
-    //Validate date every date to y-m-d
-    const date = '20010704T120854';
-    console.log(moment(date).format().slice(0, 10))
-
     const [file, setFile] = useState(null);
     const [employees, setEmployees] = useState([]);
 
@@ -39,8 +35,10 @@ function DropZone() {
             console.log(TEXT)
             let result = parse(TEXT, { header: true });
             console.log(result);
-            setEmployees(result.data)
-
+            const DATA = getEmplyeesPrintInfo(result.data);
+            const PRINTEMPLOYEES = [];
+            PRINTEMPLOYEES.push(DATA[0]);
+            setEmployees(PRINTEMPLOYEES);
         })
     }, [])
 
