@@ -1,6 +1,6 @@
 .dragContainer {
     margin-top   : 50px;
-    border       : 1px solid grey;
+    border       : 3px solid #3C9978;
     border-radius: 15px;
     height       : 80px;
     width        : 30%;
@@ -21,15 +21,20 @@
 }
 
 .headerDrag {
-    font-weight: 400;
+    font-weight: 500;
     font-size  : 20px;
     line-height: 24px;
     text-align : center;
-    color      : rgb(51, 49, 49);
+    color      : black;
+    font-style : italic;
     height     : 80px;
     outline    : none;
     padding-top: 20px;
     cursor     : pointer;
+}
+
+.headerDrag:hover {
+    color: white;
 }
 
 .fileInformation {
@@ -37,13 +42,14 @@
     margin-top: 8px;
     position  : relative;
     left      : 90px;
-    color     : grey;
+    color     : black;
 }
 
 .discardButtonActive {
+    font-style      : italic;
     position        : relative;
     margin-right    : 5px;
-    background-color: black;
+    background-color: #3C9978;
     font-weight     : 400;
     font-size       : 15px;
     line-height     : 18px;
@@ -53,25 +59,33 @@
     outline         : none;
     border-width    : 1px;
     border-style    : solid;
-    border-radius   : 2px;
-    padding         : 5px;
+    border-radius   : 5px;
+    padding         : 8px;
     left            : 720px;
     top             : -30px;
 }
 
 .discardButton {
+    font-style      : italic;
     position        : relative;
-    background-color: transparent;
+    background-color: rgb(182, 181, 181);
     font-weight     : 400;
     font-size       : 15px;
     line-height     : 18px;
     cursor          : pointer;
-    color           : rgb(22, 24, 35);
+    border-radius   : 5px;
+    color           : grey;
     outline         : none;
-    border-width    : 1px;
-    border-style    : solid;
-    border-radius   : 2px;
-    padding         : 5px;
+    padding         : 8px;
+    border          : none;
     left            : 720px;
     top             : -30px;
+}
+
+.activeInfo {
+    color: white;
+}
+
+.buttonNotification {
+    background-color: #3C9978 !important;
 }

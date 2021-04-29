@@ -1,5 +1,12 @@
 body {
-    background-color: whitesmoke;
+    background-image:
+    linear-gradient(
+      to right, 
+      #fffdc2,
+      #fffdc2 1%,
+      #d7f0a2 1%,
+      #c3e7cb 99%
+    );
 }
 .container {
     padding-top: 30px;

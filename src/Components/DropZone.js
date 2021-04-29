@@ -4,17 +4,23 @@ import { notification, Button } from 'antd';
 import 'antd/dist/antd.css';
 import styles from './Upload.module.css';
 import EmployeesTable from './Table';
-import {parse} from 'papaparse';
+import { parse } from 'papaparse';
+import moment from 'moment'
+
 
 
 function DropZone() {
+    //Validate date every date to y-m-d
+    const date = '20010704T120854';
+    console.log(moment(date).format().slice(0, 10))
+
     const [file, setFile] = useState(null);
-    const [employees, setEmployees] = useState([{ email: 'bobi', name: 'pesho' }]);
+    const [employees, setEmployees] = useState([]);
 
     const openNotification = (message) => {
         const key = `open${Date.now()}`;
         const btn = (
-            <Button type="primary" size="small" onClick={() => notification.close(key)}>
+            <Button type="primary" size="small" className={styles.buttonNotification} onClick={() => notification.close(key)}>
                 Confirm
             </Button>
         );
@@ -31,7 +37,10 @@ function DropZone() {
         Array.from(acceptedFiles).forEach(async file => {
             const TEXT = await file.text();
             console.log(TEXT)
-            const RESULT = parse(TEXT)
+            let result = parse(TEXT, { header: true });
+            console.log(result);
+            setEmployees(result.data)
+
         })
     }, [])
 
@@ -55,7 +64,7 @@ function DropZone() {
                             <input {...getInputProps()} />
                             {!isDragActive && <div className={styles.descriptDrag}>
                                 <div className={styles.headerDrag}>
-                                    {file ? <>List of employees</> : <> Select file to upload</>}
+                                    {file ? <p className={styles.activeInfo}>List of employees</p> : <> Select file to upload</>}
                                 </div>
                             </div>}
                             {isDragReject && "File type not accepted"}
@@ -71,7 +80,7 @@ function DropZone() {
                 }
             </div>
             <button className={file ? styles.discardButtonActive : styles.discardButton} disabled={!file ? true : false} onClick={clearFile}>Upload new file</button>
-            <EmployeesTable employees={employees} />
+            <EmployeesTable employees={employees} file={file} />
         </>
     )
 }
